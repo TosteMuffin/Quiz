@@ -1,0 +1,158 @@
+// Program     : Quiz v1.0
+// Author      : Anthony Wright
+// Date        : 1/26/2023
+// Description : This program is simply a easy quiz ive designed to
+//               practice with character variables, and a little math.
+
+#include <iostream>
+using namespace std;
+
+void welcome(string& firstname, string& lastname);
+void question_1(char& response, int& results);
+void question_2(char& response, int& results);
+void question_3(char& response, int& results);
+void question_4(char& response, int& results);
+void end_of_quiz(int& results, string& firstname, string& lastname);
+
+// Main is just holding the variables and running through the other
+// modules.
+int main()
+{
+	char response;
+	string firstname, lastname;
+	int results;
+	results = 0;
+	welcome(firstname, lastname);
+	question_1(response, results);
+	question_2(response, results);
+	question_3(response, results);
+	question_4(response, results);
+	end_of_quiz(results, firstname, lastname);
+}
+
+//
+// Each question is getting its own module, so I only need to
+// explain this once. It displays a question, a set of answers,
+
+
+void welcome(string& firstname, string& lastname)
+{
+	string ready = "ready";
+	cout << "Hello, please enter your name: ";
+	cin >> firstname;
+	cout << "Hello, " << firstname << "!"
+		 << " This quiz is just a simple test of skill!" << endl
+		 << "Type \"ready\" to begin the quiz: ";
+	cin >> ready;
+	cout << endl;
+	cout << "BEGIN!!!" << endl << endl;
+
+}
+
+
+// then reads the response and returns correct or incorrect
+void question_1(char& response, int& results)
+{
+	cout << "Question One - What is 100 x 2 / (10 - 5)?" << endl
+		<< "a:20" << endl
+		<< "b:15" << endl
+		<< "c:40" << endl
+		<< "d:45" << endl
+		<< "Answer: ";
+	cin >> response;
+
+	if (response == 'c')
+	{
+		cout << endl << "Correct!" << endl;
+		results = 1;
+	}
+	else
+	{
+		cout << endl << "Incorrect" << endl;
+	}
+}
+
+
+void question_2(char& response, int& results)
+{
+	cout << endl << "Question Two - What is the square root of 144?" << endl
+		<< "a:12" << endl
+		<< "b:14" << endl
+		<< "c:16" << endl
+		<< "d:8" << endl
+		<< "Answer: ";
+	cin >> response;
+
+	if (response == 'a')
+	{
+		cout <<endl << "Correct!" << endl;
+		results = results + 1;
+	}
+	else
+	{
+		cout << endl << "Incorrect" << endl;
+	}
+}
+
+void question_3(char& response, int& results)
+{
+	cout << endl << "Question Three - What is 11 x 46?" << endl
+		<< "a:734" << endl
+		<< "b:506" << endl
+		<< "c:320" << endl
+		<< "d:1000" << endl
+		<< "Answer: ";
+	cin >> response;
+
+	if (response == 'b')
+	{
+		cout << endl << "Correct!" << endl;
+		results = results + 1;
+	}
+	else
+	{
+		cout << endl << "Incorrect" << endl;
+	}
+}
+
+void question_4(char& response, int& results)
+{
+	cout << endl << "Question Four - What is (50 / 2) x (5 x 3)" << endl
+		<< "a:500" << endl
+		<< "b:465" << endl
+		<< "c:350" << endl
+		<< "d:375" << endl
+		<< "Answer: ";
+	cin >> response;
+
+	if (response == 'd')
+	{
+		cout << endl << "Correct!" << endl << endl;
+		results = results + 1;
+	}
+	else
+	{
+		cout << endl << "Incorrect" << endl << endl;
+	}
+}
+
+
+// This is just displaying the results of the quiz.
+void end_of_quiz(int& results, string& firstname, string& lastname)
+{
+	if (results == 4) {
+		cout << "Congrats, " << firstname << "!"
+			 << " You got all 4 questions correct!";
+	}
+	else if (results == 3) {
+		cout << "Almost there, " << firstname << "!"
+			 << " you got " << results << " out of 4 correct";
+	}
+	else if (results == 2) {
+		cout << "Almost there, " << firstname << "!"
+			 << " you got " << results << " out of 4 correct";
+	}
+	else if (results <= 1) {
+		cout << "You got " << results << ", better luck next time" << firstname;
+	}
+}
