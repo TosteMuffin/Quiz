@@ -1,0 +1,127 @@
+// Program     : Quiz v1.0
+// Author      : Anthony Wright
+// Date        : 1/26/2023
+// Description : This program is simply a easy quiz ive designed to
+//               practice with character variables, and a little math.
+
+#include <iostream>
+using namespace std;
+
+
+void question_1(char &response, int &results);
+void question_2(char &response, int &results);
+void question_3(char &response, int &results);
+void question_4(char &response, int &results);
+void end_of_quiz(int &results);
+
+// Main is just holding the variables and running through the other
+// modules.
+int main()
+{
+char response;
+int results;
+results = 0;
+question_1(response, results);
+question_2(response, results);
+question_3(response, results);
+question_4(response, results);
+end_of_quiz(results);
+}
+
+//
+// Each question is getting its own module, so I only need to
+// explain this once. It displays a question, a set of answers,
+
+
+// then reads the response and returns correct or incorrect
+void question_1(char &response, int &results)
+{
+cout << "Question, What is 2 + 2?" << endl
+<< "a:6" << endl
+<< "b:4" << endl
+<< "c:-4" << endl
+<< "d:8" << endl
+<< "Answer: ";
+cin >> response;
+
+if (response == 'b')
+{
+cout << "Correct!" << endl;
+results = 1;
+}
+else
+{
+cout << "Incorrect" << endl;
+}
+}
+
+
+void question_2(char &response, int &results)
+{
+cout << endl << "Question, What is 4 + 6?" << endl
+<< "a:12" << endl
+<< "b:4" << endl
+<< "c:8" << endl
+<< "d:10" << endl
+<< "Answer: ";
+cin >> response;
+
+if (response == 'd')
+{
+cout << "Correct!" << endl;
+results = results + 1;
+}
+else
+{
+cout << "Incorrect" << endl;
+}
+}
+
+void question_3(char& response, int& results)
+{
+cout << endl << "Question, What is 10 * 32?" << endl
+<< "a:734" << endl
+<< "b:405" << endl
+<< "c:320" << endl
+<< "d:1000" << endl
+<< "Answer: ";
+cin >> response;
+
+if (response == 'c')
+{
+cout << "Correct!" << endl;
+results = results + 1;
+}
+else
+{
+cout << "Incorrect" << endl;
+}
+}
+
+void question_4(char& response, int& results)
+{
+cout << endl << "Question, What is the square root of 25" << endl
+<< "a:5" << endl
+<< "b:7" << endl
+<< "c:5.5" << endl
+<< "d:2" << endl
+<< "Answer: ";
+cin >> response;
+
+if (response == 'a')
+{
+cout << "Correct!" << endl;
+results = results + 1;
+}
+else
+{
+cout << "Incorrect" << endl;
+}
+}
+
+
+// This is just displaying the results of the quiz.
+void end_of_quiz(int &results)
+{
+cout << endl << endl << "You got " << results << " out of 4 correct!" << endl;
+}
