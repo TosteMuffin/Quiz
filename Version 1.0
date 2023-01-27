@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace std;
+
+
+int main()
+{
+char response, answer;
+answer = 'b';
+cout << "Question, What is 2 + 2?" << endl
+<< "a:65" << endl
+<< "b:4" << endl
+<< "c:-4" << endl
+<< "d:8" << endl
+<< "Answer: ";
+cin >> response;
+if (response == 'b')
+{
+cout << "Correct!";
+}
+else
+{
+cout << "Wrong Answer";
+}
+
+}
