@@ -1,7 +1,7 @@
-// Program     : Quiz v1.0
+// Program     : Quiz v2.0
 // Author      : Anthony Wright
 // Date        : 1/26/2023
-// Description : This program is simply a easy quiz ive designed to
+// Description : This program is simply a easy quiz I've designed to
 //               practice with character variables, and a little math.
 
 #include <iostream>
