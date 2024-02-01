@@ -8,3 +8,5 @@ RESTART: I'm restarting this project after some time off and completion of more 
 Version 1.0: Created a baseline for the code, its pretty crude and isn't explained very well. It uses rand() to create random numbers and then just asks you to add them. This goes on until you get 5 questions wrong. It also has a "difficulty" function that currently doesnt do anything except appear after every 3 correct answers.
 
 Version 2.0: Moved a lot of the main mechanics of the quiz into their own modules so main looks a little more clean. I also made the difficulty scaling sorta scale. As of right now there are 3 difficulties, and it jumps from 10 to 50 to 100 for possible numbers that can be added. In the future I will have more than just addition in the quiz and a lot more difficulties.
+
+Version 2.1: Created a module for the difficulty selection to make it easier to edit and fix going forward.
