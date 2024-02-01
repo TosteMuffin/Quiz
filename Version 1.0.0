@@ -1,0 +1,49 @@
+/*
+Date: 2/1/2024
+Author: TosteMuffin
+Desc: A quiz that adapts to the user by getting more difficult, or less difficult
+      based on the amount of correct answers.*/
+
+
+#include <iostream>
+#include <string>
+#include <cstdlib>
+#include <ctime>
+
+int main() {
+    std::srand(static_cast<unsigned int>(std::time(nullptr))); // Seed for randomization
+
+    int correctCount = 0;
+    int wrongCount = 0;
+
+    while (true) {
+        // Generate random numbers for the quiz
+        int num1 = std::rand() % 10;
+        int num2 = std::rand() % 10;
+
+        // Ask the user the question
+        std::cout << "What is " << num1 << " + " << num2 << "? ";
+        int userAnswer;
+        std::cin >> userAnswer;
+
+        // Check the answer
+        int correctAnswer = num1 + num2;
+        if (userAnswer == correctAnswer) {
+            std::cout << "Correct!\n";
+            correctCount++;
+            // Increase difficulty based on correct answers
+            if (correctCount % 3 == 0) {
+                std::cout << "Difficulty increased!\n";
+            }
+        } else {
+            std::cout << "Incorrect!\n";
+            wrongCount++;
+            if (wrongCount >= 5) {
+                std::cout << "You got 5 or more questions wrong. Game over!\n";
+                break; // Exit the loop
+            }
+        }
+    }
+
+    return 0;
+}
