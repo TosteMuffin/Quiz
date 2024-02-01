@@ -1,5 +1,5 @@
 # Quiz
-This program is a preset quiz I wrote in C++. It is a multiple choice quiz based on some pretty simple algebra.
+This program is a preset quiz I wrote in C++. It is a quiz that asks you to do very very simple addition.
 
 Changelog
 
