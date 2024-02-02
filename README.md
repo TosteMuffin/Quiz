@@ -1,7 +1,7 @@
 # Quiz
 This program is a quiz I wrote in C++. It is a quiz that asks you to do very very simple random addition problems.
 
-Changelog
+CHANGELOG
 
 RESTART: I'm restarting this project after some time off and completion of more college classes. I will be restarting from Version 1 because I have new ideas for this program, and it would be easier to rebuild from the ground up than to edit the existing code. My overall goal with this program is to make a quiz that can change its difficulty both slowly and quickly, based off of the amount of correct answers you are getting. I will also try and make this quiz infinite and only end once you have gotten 5 questions wrong, possibly introduce a score system at a later date along with a leaderboard.
 
@@ -16,3 +16,11 @@ Version 2.2: Added some code that track the time spent on the quiz, right now it
 Version 2.3: I finished the leaderboard module by using files to record previous attempts and then add current attempts to it. I also made it to where if you get one wrong answer the quiz ends instead of 5. In the future I will make the wrong answer counter a setting you can change at the beginning.
 
 !!!NOTICE!!! Version 2.2 and Version 2.3 all happened within the span of about 20 minutes (I am severely caffinated and just zooming) and I forgot to upload Version 2.2 before I started working on Version 2.3, so I will be uploading them as a single file titled Version 2.2/2.3.
+
+FUTURE PLANS (Will get changed with each new version upload)
+
+1. A way to push the leaderboard to a website so everyone can view any attempt.
+2. Settings at the beginning of the program to select starting difficulty, what type of problems, and how many wrong answers until the quiz stops.
+3. A way for the leaderboard to change based off of settings.
+4. Make the time counter only apply to active participants not someone who just opens the program and lets it run.
+5. Add different types of problems ie. Subtraction, Multiplication, and Division (also maybe more difficult things like fuctions if people want).
