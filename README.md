@@ -15,7 +15,7 @@ Version 2.2: Added some code that track the time spent on the quiz, right now it
 
 Version 2.3: I finished the leaderboard module by using files to record previous attempts and then add current attempts to it. I also made it to where if you get one wrong answer the quiz ends instead of 5. In the future I will make the wrong answer counter a setting you can change at the beginning.
 
-!!!NOTICE!!! Version 2.2 and Version 2.3 all happened within the span of about 20 minutes (I am severely caffinated and just zooming) and I forgot to upload Version 2.2 before I started working on Version 2.3, so I will be uploading them as a single file titled Version 2.2/2.3.
+!!!NOTICE!!! Version 2.2 and Version 2.3 all happened within the span of about 20 minutes (I am severely caffinated and just zooming) and I forgot to upload Version 2.2 before I started working on Version 2.3, so I will be uploading them as a single file titled Version 2.2 & 2.3.
 
 FUTURE PLANS (Will get changed with each new version upload)
 
