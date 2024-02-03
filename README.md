@@ -21,8 +21,9 @@ Version 2.4: The only change that was made was removing the modules that talk to
 
 FUTURE PLANS (Will get changed with each new version upload)
 
-1. A way to push the leaderboard to a website so everyone can view any attempt.
-2. Settings at the beginning of the program to select starting difficulty, what type of problems, and how many wrong answers until the quiz stops.
-3. A way for the leaderboard to change based off of settings.
-4. Make the time counter only apply to active participants not someone who just opens the program and lets it run.
-5. Add different types of problems ie. Subtraction, Multiplication, and Division (also maybe more difficult things like fuctions if people want).
+1. Create a leaderboard through file manipulation so it can save/display past runs of the program.
+2. A way to push the leaderboard to a website so everyone can view any attempt.
+3. Settings at the beginning of the program to select starting difficulty, what type of problems, and how many wrong answers until the quiz stops.
+4. A way for the leaderboard to change based off of settings.
+5. Make the time counter only apply to active participants not someone who just opens the program and lets it run.
+6. Add different types of problems ie. Subtraction, Multiplication, and Division (also maybe more difficult things like fuctions if people want).
