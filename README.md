@@ -17,6 +17,8 @@ Version 2.3: I finished the leaderboard module by using files to record previous
 
 !!!NOTICE!!! Version 2.2 and Version 2.3 all happened within the span of about 20 minutes (I am severely caffinated and just zooming) and I forgot to upload Version 2.2 before I started working on Version 2.3, so I will be uploading them as a single file titled Version 2.2 & 2.3.
 
+Version 2.4: The only change that was made was removing the modules that talk to the file for the leaderboard. I will be focusing on cleaning up my code and reordering some of the operations to make it flow better.
+
 FUTURE PLANS (Will get changed with each new version upload)
 
 1. A way to push the leaderboard to a website so everyone can view any attempt.
