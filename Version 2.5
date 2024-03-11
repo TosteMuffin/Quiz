@@ -1,0 +1,153 @@
+/*
+Date: 2/1/2024
+Author: TosteMuffin
+*/
+
+//libraries used
+
+#include <iostream>
+using std::cerr;
+using namespace std;
+#include <string>
+#include <cstdlib>
+#include <ctime>
+#include <chrono>
+#include <fstream>
+#include <string>
+#include <fstream>
+using std::ofstream;
+
+//code from here on down
+
+void easygen(int& num1, int& num2);
+void normalgen(int& num1, int& num2);
+void hardgen(int& num1, int& num2);
+void difficulty(int userAnswer, int& correctAnswer, int& correctCount, int& difficultyCount);
+void difficultyScale(int difficultyCount, int& num1, int& num2);
+void getInfo(std::string& Info);
+void leaderboard(ofstream &stream, string Info, int Duration, int correctCount);
+
+
+int main()
+{
+    auto startTime = std::chrono::high_resolution_clock::now();
+    std::srand(static_cast<unsigned int>(std::time(nullptr))); // Seed for randomization
+
+    int correctCount = 0;
+    int wrongCount = 0;
+    int num1, num2;
+    int difficultyCount = 1;
+    ofstream Outdata;
+    std::string Info;
+    
+    Outdata.open("C:\\Users\\Owner\\OneDrive\\Desktop\\Text files\\Leaderboard.txt");
+    if (!Outdata.is_open())
+    {
+        cerr << "Error: file could not be opened.";
+        exit(EXIT_FAILURE);
+    }
+
+    while (true)
+    {
+        // Generate random numbers for the quiz
+        difficultyScale(difficultyCount, num1, num2);
+
+
+        // Ask the user the question
+        cout << "What is " << num1 << " + " << num2 << "? ";
+        int userAnswer;
+        cin >> userAnswer;
+
+        // Check the answer
+        int correctAnswer = num1 + num2;
+        difficulty(userAnswer, correctAnswer, correctCount, difficultyCount);
+        if (userAnswer != correctAnswer)
+        {
+            cout << "Incorrect!\n";
+            wrongCount++;
+            if (wrongCount == 1) {
+                cout << "You got a questions wrong. Game over!\n";
+                auto endTime = std::chrono::high_resolution_clock::now();
+                auto duration = std::chrono::duration_cast<std::chrono::seconds>(endTime - startTime);
+                int Duration = duration.count();
+                cout << "You managed to keep answering questions correctly for " << duration.count() << " seconds! \n \n";
+                // sending to leaderboard file
+                    getInfo(Info);
+                    for (int i = 1; i < 1; i++)
+                    {
+                        leaderboard(Outdata, Info, Duration, correctCount);
+                    }
+                leaderboard(Outdata, Info, Duration, correctCount);
+                break; // Exit the loop
+            }
+        }
+    }
+    Outdata.close();
+}
+
+
+void easygen(int& num1, int& num2)
+{
+
+    num1 = std::rand() % 10;
+    num2 = std::rand() % 10;
+}
+
+void normalgen(int& num1, int& num2)
+{
+    num1 = std::rand() % 50;
+    num2 = std::rand() % 50;
+}
+
+void hardgen(int& num1, int& num2)
+{
+    num1 = std::rand() % 100;
+    num2 = std::rand() % 100;
+}
+
+
+void difficulty(int userAnswer, int& correctAnswer, int& correctCount, int& difficultyCount)
+{
+    if (userAnswer == correctAnswer) {
+        cout << "Correct!\n";
+        correctCount++;
+        // Increase difficulty based on correct answers
+        if (correctCount % 5 == 0) {
+            difficultyCount++;
+            std::cout << "Difficulty Level increased to " << difficultyCount << "! \n";
+        }
+    }
+}
+
+
+void difficultyScale(int difficultyCount, int& num1, int& num2)
+{
+    if (difficultyCount == 1)
+    {
+        easygen(num1, num2);
+    }
+    else if (difficultyCount == 2)
+    {
+        normalgen(num1, num2);
+    }
+    else if (difficultyCount == 3)
+    {
+        hardgen(num1, num2);
+    }
+}
+
+
+
+void getInfo(std::string& Info)
+{
+    cout << "Please input 5 digits/letters to represent you on the leaderboard: ";
+    cin >> Info;
+}
+
+
+
+void leaderboard(ofstream &stream, string Info, int Duration, int correctCount)
+{
+    cout << Info << " got " << correctCount << " answers correct in " << Duration << " seconds";
+    stream << Info << " got " << correctCount << " answers correct in " << Duration << " seconds";
+}
